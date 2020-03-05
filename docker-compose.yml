@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  osticket:
+    #image: "campbellsoftwaresolutions/osticket:1.12"
+    build:
+      context: .
+      dockerfile: dockerfile
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_DATABASE=osticket
+      - MYSQL_USER=osticket
+      - MYSQL_PASSWORD=0T1cket
+    links:
+      - mysql:mysql
+    ports:
+      - "8080:80"
+    restart: always
+    volumes:
+      - osticket:/data
+
+  mysql:
+    image: "mariadb:10.4"
+    environment:
+       - MYSQL_RANDOM_ROOT_PASSWORD=true
+       - MYSQL_DATABASE=osticket
+       - MYSQL_USER=osticket
+       - MYSQL_PASSWORD=0T1cket
+    restart: always
+volumes:
+  osticket:
