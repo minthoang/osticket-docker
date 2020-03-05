@@ -6,7 +6,7 @@ services:
     #image: "campbellsoftwaresolutions/osticket:1.12"
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     environment:
       - MYSQL_HOST=mysql
       - MYSQL_DATABASE=osticket
