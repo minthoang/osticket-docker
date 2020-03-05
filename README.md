@@ -15,7 +15,7 @@
  * gd, gettext, imap, json, mbstring, and xml extensions for PHP
  * APC module enabled and configured for PHP
 
-# install:
+# Install:
 * **docker-compose up**
 
 # Wait for the installation to complete then browse to your OSTicket staff control panel at http://localhost:8080/scp/. 
